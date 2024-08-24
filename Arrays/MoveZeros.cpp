@@ -51,3 +51,26 @@ vector<int> moveZeros(int n, vector<int> a) {
     }
 
 }
+
+//Code: Optimal
+
+//Two pointer
+vector<int> moveZeros(int n, vector<int> a) {
+    
+    
+    int j = 0;
+
+       
+       for(int i = 0; i<a.size(); i++){
+            if(a[i] == 0){
+                continue;
+            }
+            else{
+                swap(a[j], a[i]);
+                j+=1;
+            }
+       } 
+
+    return a;
+
+}
