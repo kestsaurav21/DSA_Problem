@@ -55,7 +55,13 @@ vector<int> rotateArray(vector<int>arr, int k) {
 
     return arr;
 
+}
 
 
+// Code 2--> Optimal solution
 
+void rotate(int nums[], int n, int k) {
+    reverse(nums,nums+n);
+    reverse(nums,nums+k%n);
+    reverse(nums+k%n,nums+n);
 }
