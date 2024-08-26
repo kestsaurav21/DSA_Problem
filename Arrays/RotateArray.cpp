@@ -34,7 +34,7 @@
 // 1 <= 'k' < 'n'
 
 
-//CODE -->
+//CODE --> LEFT Rotate
 
 vector<int> rotateArray(vector<int>arr, int k) {
     // Write your code here.
@@ -60,8 +60,35 @@ vector<int> rotateArray(vector<int>arr, int k) {
 
 // Code 2--> Optimal solution
 
-void rotate(int nums[], int n, int k) {
-    reverse(nums,nums+n);
-    reverse(nums,nums+k%n);
-    reverse(nums+k%n,nums+n);
-}
+// LEFT Rotate
+
+
+
+class Solution {
+
+public:
+    void rotate(vector<int>& nums, int k) {
+        
+        k = k%nums.size();
+        reverse(nums.begin(), nums.end());
+        reverse(nums.begin(),nums.begin()+k);
+        reverse(nums.begin()+k,nums.end());
+
+        
+    }
+
+};
+
+
+
+// RIGHT ROTATE
+
+void rotate(vector<int>& nums, int k) {
+        
+        k = k%nums.size();
+        reverse(nums.end() - k, nums.end());
+        reverse(nums.begin(), nums.end() - k);
+        reverse(nums.begin(),nums.end());
+
+        
+    }
