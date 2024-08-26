@@ -45,3 +45,23 @@ int getSingleElement(vector<int> &arr){
 	return -1;
 
 }
+
+// Optimal Approach -->  Using XOR
+
+
+#include<vector>
+
+int getSingleElement(vector<int> &arr){
+	// Write your code here.	
+	int n = arr.size();
+	int xorr = 0;
+	for (int i =0; i<n; i++){
+		
+		xorr = xorr ^ arr[i];
+
+	}
+
+	return xorr;
+
+}
+
