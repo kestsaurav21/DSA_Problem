@@ -26,7 +26,7 @@
 
 
 
-
+// Brute Force 
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -45,3 +45,6 @@ public:
     return res;
     }
 };
+
+
+//Optimal Approach - using Map data structure
