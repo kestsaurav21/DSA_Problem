@@ -22,10 +22,10 @@
 // nums[i] is either 0, 1, or 2.
 
 
-//Solution:
+//Solution: 3 Pointer
 class Solution {
 public:
-    void sortColors(vector<int>& nums) {
+    void sortColors(vector <int>& nums) {
 
     int zero = -1;
     int one = -1;
