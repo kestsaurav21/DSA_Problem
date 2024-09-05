@@ -25,22 +25,23 @@
 //Solution: 3 Pointer
 class Solution {
 public:
-    void sortColors(vector <int>& nums) {
+    void sortColors(vector<int>& nums) {
+    int n = nums.size();
+    int l = 0, m=0, r=n-1;
 
-    int zero = -1;
-    int one = -1;
-    int two = -1;
-
-    for (const int num : nums)
-      if (num == 0) {
-        nums[++two] = 2;
-        nums[++one] = 1;
-        nums[++zero] = 0;
-      } else if (num == 1) {
-        nums[++two] = 2;
-        nums[++one] = 1;
-      } else {
-        nums[++two] = 2;
-      }   
+        while(m<=r){
+            if(nums[m] == 0){
+                swap(nums[l], nums[m]);
+                l++;
+                m++;
+            }
+            else if(nums[m] == 1){
+                m++;
+            }
+            else{
+                swap(nums[m], nums[r]);
+                r--;
+            }
+        }
     }
 };
