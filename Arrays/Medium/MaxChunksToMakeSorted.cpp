@@ -26,7 +26,24 @@
 
 // Solution 1:
 
-
+class Solution {
+public:
+    int maxChunksToSorted(vector<int>& arr) {
+       int countChunks =0;
+       int n = arr.size();
+       int preMax[n];
+       preMax[0] = arr[0];
+       for(int i=1; i<n; i++){
+        preMax[i] = max(preMax[i-1], arr[i]);
+       }
+       for(int i =0; i<n; i++){
+            if(i == preMax[i]){
+                countChunks++;
+            }
+       } 
+       return countChunks;
+    }
+};
 
 
 
