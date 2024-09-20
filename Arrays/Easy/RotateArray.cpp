@@ -111,6 +111,7 @@ public:
 
 //TC: O(n)
 //SC: O(n)
+    
     k = k%n;
     
     int temp[n];
@@ -118,8 +119,26 @@ public:
             temp[(i+k)%n] = arr[i];
     }
     
-//
 
+// Optimal Solution: Without extra space
+//TC: O(n)
+//SC: O(1)
+class Solution {
+
+public:
+    void rotate(vector<int>& nums, int k) {
+        
+        k = k%nums.size();
+        reverse(nums.begin(), nums.end());
+        reverse(nums.begin(),nums.begin()+k);
+        reverse(nums.begin()+k,nums.end());
+
+        
+    }
+
+};
+
+    
 
 
     
