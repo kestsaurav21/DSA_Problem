@@ -82,13 +82,45 @@ public:
 
 
 // RIGHT ROTATE
+// Brute Force
+//TC: O(k.n)
+//SC: O(1)
 
-void rotate(vector<int>& nums, int k) {
-        
-        k = k%nums.size();
-        reverse(nums.end() - k, nums.end());
-        reverse(nums.begin(), nums.end() - k);
-        reverse(nums.begin(),nums.end());
+class Solution {
 
+public:
+    void rotate(vector<int>& nums, int k) {
         
+    int n = nums.size();
+
+    k = k%n;
+    
+    for(int i = 0; i<k; i++){
+        int temp = nums[n-1];
+        for(int i = n-2; i>=0; i--){
+            nums[i+1] = nums[i];
+        }
+        nums[0] = temp;
     }
+    }
+
+};
+
+
+// Optimal Solution: But with extra space
+
+//TC: O(n)
+//SC: O(n)
+    k = k%n;
+    
+    int temp[n];
+    for(int i = 0; i<n; i++){
+            temp[(i+k)%n] = arr[i];
+    }
+    
+//
+
+
+
+    
+    
